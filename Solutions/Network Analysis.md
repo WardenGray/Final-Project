@@ -14,7 +14,7 @@ You must inspect your traffic capture to answer the following questions:
   1. Frank-n-ted.com
   2. Wireshark filter: ip.src==10.6.12.0/24
 
-![Frank-n-Ted]('Network Screenshots'/frank-n-ted.com.png)
+![Frank-n-Ted]("Network Screenshots"/frank-n-ted.com.png)
 
 1. What is the IP address of the Domain Controller (DC) of the AD network
   1. 10.6.12.12
