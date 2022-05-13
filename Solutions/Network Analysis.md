@@ -16,19 +16,19 @@ You must inspect your traffic capture to answer the following questions:
 
 ![Frank-n-Ted](Network%20Screenshots/frank-n-ted.com.png)
 
-1. What is the IP address of the Domain Controller (DC) of the AD network
+2. What is the IP address of the Domain Controller (DC) of the AD network
   1. 10.6.12.12
 
-1. What is the name of the malware downloaded to the 10.6.12.203 machine? Once you have found the file, export it to your Kali machine&#39;s desktop.
+3. What is the name of the malware downloaded to the 10.6.12.203 machine? Once you have found the file, export it to your Kali machine&#39;s desktop.
   1. June11.dll
   2. Wireshark Filter: ip.src==10.6.12.203 and http.request.method == GET
 
-![Malware](Network_Screenshots/question_3.png)
+![Malware](Network%20Screenshots/malware.png)
 
-1. Upload the file to [VirusTotal.com](https://www.virustotal.com/gui/). What kind of malware is this classified as?
+4. Upload the file to [VirusTotal.com](https://www.virustotal.com/gui/). What kind of malware is this classified as?
   1. It is a trojan
 
-![VirusTotal](Network_Screenshots/question_4.png)
+![VirusTotal](Network%20Screenshots/virus_total.png)
 
 ####
 
@@ -58,22 +58,20 @@ Wireshark Filter: ip.addr == 172.16.4.0/24
 - IP address: 172.16.4.205
 - MAC address: 00:59:07:b0:63:a4
 
-![](RackMultipart20220513-1-k2pgd2_html_629a20f6397ff3ab.png)
+[Rotterdam](Network%20Screenshots/Rotterdam_PC.png)
 
-![](RackMultipart20220513-1-k2pgd2_html_8223b4b410343760.png)
+[MAC](Network%20Screenshots/rotterdam_pc_MAC.png)
 
-1. What is the username of the Windows user whose computer is infected?
+2. What is the username of the Windows user whose computer is infected?
   - Wireshark Filter: ip.src==172.16.4.205 &amp;&amp; kerberos.CNameString
   - Username: matthijs.devries
 
-![](RackMultipart20220513-1-k2pgd2_html_1352dbcee6fb21a8.png)
+![Username Query](Network%20Screenshots/wireshark_query_infected_pc.png)
 
-![](RackMultipart20220513-1-k2pgd2_html_f28b854c9a7181c.png)
+![Username](Network%20Screenshots/username.png)
 
-1. What are the IP addresses used in the actual infection traffic?
+3. What are the IP addresses used in the actual infection traffic?
   - 172.16.4.205
-
-1. As a bonus, retrieve the desktop background of the Windows host.
 
 ## Illegal Downloads
 
@@ -96,18 +94,18 @@ The following Wireshark Filters were used:
 
 1. Find the following information about the machine with IP address 10.0.0.201:
   1. MAC address: 00:16:17:18:66:c8
-  2. ![](RackMultipart20220513-1-k2pgd2_html_fba2d328890e20e8.png)
-  3. Windows username: blanco-desktop$
-  4. ![](RackMultipart20220513-1-k2pgd2_html_1c3f12361826ba5e.png)
-  5. OS version: Windows NT 10.0
-  6. ![](RackMultipart20220513-1-k2pgd2_html_6eb5e2dc1830be15.png)
+   ![MAC Address](Network%20Screenshots/illegal_downloads_MAC_address.png)
+  2. Windows username: blanco-desktop$
+   ![Username](Network%20Screenshots/illegal_downloads_username.png)
+  3. OS version: Windows NT 10.0
+   ![OS Version](Network%20Screenshots/illegal_downloads_OS_version.png)
 
 1. Which torrent file did the user download?
   1. There were a few, documented below is one called Betty Boop - Rhythm on the Reservation
   2. Wireshark filter: ip.addr == 10.0.0.201 &amp;&amp; http.request.method == &quot;GET&quot;
   3. Use file: export to export the downloaded torrent
-  4. ![](RackMultipart20220513-1-k2pgd2_html_2c3d485b4b4be9d4.png)
-  5. ![](RackMultipart20220513-1-k2pgd2_html_c482a1015b9dda00.png)
-  6. Here&#39;s another with text describing what happens in the movie called &quot;usercomments.html&quot;
-  7. ![](RackMultipart20220513-1-k2pgd2_html_7d8c1631c8a025b4.png)
-  8. The text says &quot;Betty arrives at a reservation in her car loaded with musical instruments. The Native Americans find alternate uses for the instruments until Betty teaches them to play swing.&quot;
+     ![Betty Boop](Network%20Screenshots/illegal_downloads_betty.png)
+     ![Betty Boop](Network%20Screenshots/illegal_downloads_betty_boop.png)
+  4. Here&#39;s another with text describing what happens in the movie called &quot;usercomments.html&quot;
+     ![Betty Boop](Network%20Screenshots/illegal_downloads_user_comments.png)
+  5. The text says &quot;Betty arrives at a reservation in her car loaded with musical instruments. The Native Americans find alternate uses for the instruments until Betty teaches them to play swing.&quot;
