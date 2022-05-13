@@ -101,11 +101,11 @@ The following Wireshark Filters were used:
    ![OS Version](Network%20Screenshots/illegal_downloads_OS_version.png)
 
 1. Which torrent file did the user download?
-  1. There were a few, documented below is one called Betty Boop - Rhythm on the Reservation
-  2. Wireshark filter: ip.addr == 10.0.0.201 &amp;&amp; http.request.method == &quot;GET&quot;
-  3. Use file: export to export the downloaded torrent
+     There were a few, documented below is one called Betty Boop - Rhythm on the Reservation
+    Wireshark filter: ip.addr == 10.0.0.201 &amp;&amp; http.request.method == &quot;GET&quot;
+    Use file: export to export the downloaded torrent
      ![Betty Boop](Network%20Screenshots/illegal_downloads_betty.png)
      ![Betty Boop](Network%20Screenshots/illegal_downloads_betty_boop.png)
-  4. Here&#39;s another with text describing what happens in the movie called &quot;usercomments.html&quot;
+     Here&#39;s another with text describing what happens in the movie called &quot;usercomments.html&quot;
      ![Betty Boop](Network%20Screenshots/illegal_downloads_user_comments.png)
-  5. The text says &quot;Betty arrives at a reservation in her car loaded with musical instruments. The Native Americans find alternate uses for the instruments until Betty teaches them to play swing.&quot;
+     The text says &quot;Betty arrives at a reservation in her car loaded with musical instruments. The Native Americans find alternate uses for the instruments until Betty teaches them to play swing.&quot;
