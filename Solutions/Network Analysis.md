@@ -14,7 +14,7 @@ You must inspect your traffic capture to answer the following questions:
   1. Frank-n-ted.com
   2. Wireshark filter: ip.src==10.6.12.0/24
 
-![Frank-n-Ted](Network Screenshots/frank-n-ted.com.png)
+![Frank-n-Ted](Network_Screenshots/frank-n-ted.com.png)
 
 1. What is the IP address of the Domain Controller (DC) of the AD network
   1. 10.6.12.12
@@ -23,12 +23,12 @@ You must inspect your traffic capture to answer the following questions:
   1. June11.dll
   2. Wireshark Filter: ip.src==10.6.12.203 and http.request.method == GET
 
-![Malware](Network Screenshots/question 3.png)
+![Malware](Network_Screenshots/question_3.png)
 
 1. Upload the file to [VirusTotal.com](https://www.virustotal.com/gui/). What kind of malware is this classified as?
   1. It is a trojan
 
-![VirusTotal](Network Screenshots/question 4.png)
+![VirusTotal](Network_Screenshots/question_4.png)
 
 ####
 
