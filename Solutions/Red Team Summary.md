@@ -13,7 +13,7 @@ Nmap scan results for each machine reveal the below services and OS details:
 
 $ nmap ... # nmap -sV 192.168.1.110
 
-![](RackMultipart20220513-1-igqb1a_html_9da9c34b1e4321f4.png)
+![Frank-n-Ted](Red%20Team%20Screenshots/nmap.png)
 
 This scan identifies the services in the above screenshot as potential points of entry.
 
